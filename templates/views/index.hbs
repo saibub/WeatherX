@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherX</title>
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+</head>
+
+<body>
+
+    <header>
+        {{>header}}
+        <div class="intro-text" id="intro-text">
+            <h1>Weather X</h1>
+            <h3> Realtime weather using weatherstack API</h3>
+
+        </div>
+        <!-- <img class="bg" id="bg" src=".img/bg.png" alt="bg"> -->
+        <img class="sun" id="sun" src="./img/sun.png" alt="sun">
+        <img class="cloud1" id="cloud1" src="./img/cloud1.png" alt="cloud1">
+        <img class="cloud2" id="cloud2" src="./img/cloud2.png" alt="cloud2">
+        <img class="cloud3" id="cloud3" src="./img/cloud3.png" alt="cloud3">
+
+    </header>
+    <section>
+
+        <div id="cover">
+            <form method="get" action="">
+                <div class="tb">
+                    <div class="td"><input id="sbar" type="text" placeholder="Search" required></div>
+                    <div class="td" id="s-cover">
+                        <button type="submit">
+                            <div id="s-circle"></div>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <br>
+        <p id="msg1"></p>
+        <p id="msg2"></p>
+
+    </section>
+
+
+    <script type="text/javascript">
+        let sun = document.getElementById("sun");
+        let cloud1 = document.getElementById("cloud1");
+        let cloud2 = document.getElementById("cloud2");
+        let cloud3 = document.getElementById("cloud3");
+
+        window.addEventListener('scroll', function () {
+            var value = window.scrollY;
+
+            sun.style.top = value + 0.5 + 'px';
+            sun.style.left = -value + 0.5 + 'px';
+
+
+        })
+
+    </script>
+
+
+
+    {{>footer}}
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>
